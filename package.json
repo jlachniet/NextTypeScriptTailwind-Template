@@ -1,0 +1,140 @@
+{
+	"name": "example-app",
+	"version": "0.1.0",
+	"license": "UNLICENSED",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "tsc --incremental false && next lint"
+	},
+	"dependencies": {
+		"next": "^13.1.6",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^4.0.0",
+		"@types/node": "^18.11.19",
+		"@types/react": "^18.0.27",
+		"@types/react-dom": "^18.0.10",
+		"@typescript-eslint/eslint-plugin": "^5.50.0",
+		"@typescript-eslint/parser": "^5.50.0",
+		"eslint": "^8.33.0",
+		"eslint-config-next": "^13.1.6",
+		"eslint-import-resolver-typescript": "^3.5.3",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-tailwindcss": "^3.8.3",
+		"eslint-plugin-tsdoc": "^0.2.17",
+		"postcss": "^8.4.21",
+		"prettier": "^2.8.3",
+		"tailwindcss": "^3.2.4",
+		"typescript": "^4.9.5"
+	},
+	"private": true,
+	"postcss": {
+		"plugins": {
+			"tailwindcss": {}
+		}
+	},
+	"eslintConfig": {
+		"root": true,
+		"ignorePatterns": [
+			"**/*.js",
+			"**/*.mjs"
+		],
+		"parser": "@typescript-eslint/parser",
+		"parserOptions": {
+			"project": "./tsconfig.json"
+		},
+		"extends": [
+			"eslint:recommended",
+			"next/core-web-vitals",
+			"plugin:import/recommended",
+			"plugin:@typescript-eslint/recommended",
+			"plugin:@typescript-eslint/recommended-requiring-type-checking",
+			"plugin:@typescript-eslint/strict",
+			"plugin:tailwindcss/recommended"
+		],
+		"plugins": [
+			"import",
+			"@typescript-eslint",
+			"tailwindcss",
+			"tsdoc"
+		],
+		"settings": {
+			"import/extensions": [
+				".ts",
+				".tsx"
+			],
+			"import/ignore": [
+				"node_modules"
+			],
+			"import/resolver": {
+				"typescript": true
+			}
+		},
+		"rules": {
+			"max-len": [
+				"warn",
+				{
+					"code": 160,
+					"comments": 80
+				}
+			],
+			"no-console": [
+				"warn",
+				{
+					"allow": [
+						"warn",
+						"error"
+					]
+				}
+			],
+			"no-empty": [
+				"warn",
+				{
+					"allowEmptyCatch": true
+				}
+			],
+			"no-mixed-spaces-and-tabs": "off",
+			"import/no-unused-modules": [
+				"warn",
+				{
+					"unusedExports": true,
+					"src": [
+						"src/**/*.{ts,tsx}"
+					],
+					"ignoreExports": [
+						"src/pages/**/*.tsx"
+					]
+				}
+			],
+			"@typescript-eslint/ban-types": [
+				"warn",
+				{
+					"types": {
+						"{}": false
+					},
+					"extendDefaults": true
+				}
+			],
+			"@typescript-eslint/explicit-member-accessibility": "warn",
+			"@typescript-eslint/no-floating-promises": "off",
+			"tailwindcss/classnames-order": [
+				"warn",
+				{
+					"officialSorting": true
+				}
+			],
+			"tsdoc/syntax": "warn"
+		}
+	},
+	"prettier": {
+		"useTabs": true,
+		"singleQuote": true,
+		"quoteProps": "consistent",
+		"arrowParens": "avoid",
+		"singleAttributePerLine": true
+	}
+}
