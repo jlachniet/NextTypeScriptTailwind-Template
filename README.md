@@ -31,4 +31,4 @@ This template makes a few important changes to the official Next.js template.
 - Installs and configures ESLint for high strictness.
 - Installs and configures ESLint plugins for imports, Tailwind, and TSDoc.
 - Installs and configures Prettier and an import sorter plugin.
-- Consolidated configs and removes boilerplate.
+- Consolidates configs and removes boilerplate.
