@@ -9,27 +9,30 @@
 		"lint": "tsc --incremental false && next lint"
 	},
 	"dependencies": {
-		"next": "^13.2.4",
+		"next": "^13.4.7",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"sharp": "^0.32.1"
 	},
 	"devDependencies": {
+		"@prettier/plugin-xml": "^2.2.0",
 		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
-		"@types/node": "^18.15.11",
-		"@types/react": "^18.0.31",
-		"@types/react-dom": "^18.0.11",
-		"@typescript-eslint/eslint-plugin": "^5.57.0",
-		"@typescript-eslint/parser": "^5.57.0",
-		"eslint": "^8.37.0",
-		"eslint-config-next": "^13.2.4",
-		"eslint-import-resolver-typescript": "^3.5.4",
+		"@types/node": "^20.3.2",
+		"@types/react": "^18.2.14",
+		"@types/react-dom": "^18.2.6",
+		"@typescript-eslint/eslint-plugin": "^5.60.1",
+		"@typescript-eslint/parser": "^5.60.1",
+		"eslint": "^8.43.0",
+		"eslint-config-next": "^13.4.7",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-import-resolver-typescript": "^3.5.5",
 		"eslint-plugin-import": "^2.27.5",
-		"eslint-plugin-tailwindcss": "^3.10.1",
+		"eslint-plugin-tailwindcss": "^3.13.0",
 		"eslint-plugin-tsdoc": "^0.2.17",
-		"postcss": "^8.4.21",
-		"prettier": "^2.8.7",
-		"tailwindcss": "^3.3.1",
-		"typescript": "^5.0.3"
+		"postcss": "^8.4.24",
+		"prettier": "^2.8.8",
+		"tailwindcss": "^3.3.2",
+		"typescript": "^5.1.5"
 	},
 	"private": true,
 	"postcss": {
@@ -54,7 +57,8 @@
 			"plugin:@typescript-eslint/recommended",
 			"plugin:@typescript-eslint/recommended-requiring-type-checking",
 			"plugin:@typescript-eslint/strict",
-			"plugin:tailwindcss/recommended"
+			"plugin:tailwindcss/recommended",
+			"prettier"
 		],
 		"plugins": [
 			"import",
@@ -79,7 +83,8 @@
 				"warn",
 				{
 					"code": 160,
-					"comments": 80
+					"comments": 80,
+					"ignorePattern": "eslint-disable-next-line"
 				}
 			],
 			"no-console": [
@@ -97,7 +102,6 @@
 					"allowEmptyCatch": true
 				}
 			],
-			"no-mixed-spaces-and-tabs": "off",
 			"import/no-unused-modules": [
 				"warn",
 				{
@@ -121,6 +125,18 @@
 			],
 			"@typescript-eslint/explicit-member-accessibility": "warn",
 			"@typescript-eslint/no-floating-promises": "off",
+			"@typescript-eslint/no-misused-promises": [
+				"warn",
+				{
+					"checksVoidReturn": false
+				}
+			],
+			"@typescript-eslint/no-namespace": [
+				"warn",
+				{
+					"allowDeclarations": true
+				}
+			],
 			"tailwindcss/classnames-order": [
 				"warn",
 				{
@@ -135,6 +151,6 @@
 		"singleQuote": true,
 		"quoteProps": "consistent",
 		"arrowParens": "avoid",
-		"singleAttributePerLine": true
+		"xmlWhitespaceSensitivity": "ignore"
 	}
 }
